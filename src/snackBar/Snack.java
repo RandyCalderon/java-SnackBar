@@ -6,9 +6,9 @@ public class Snack {
   private String snackName;
   private int quantity;
   private double cost;
+  private int vmId;
 
-
-  public Snack(String snackName, int quantity, double cost, vmId) {
+  public Snack(String snackName, int quantity, double cost, int vmId) {
     maxId++;
     id = maxId;
     
@@ -34,8 +34,9 @@ public class Snack {
     return amount * cost;
   }
 
-  public void buySnack(int quantity) {
+  public int buySnack(int quantity) {
     this.quantity -= quantity;
+    return this.quantity;
   }
 
   @Override
